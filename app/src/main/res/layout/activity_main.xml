@@ -4,15 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/location_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="50dp"
+        android:text="City Name"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/location_input_text_layout"
+        app:layout_constraintEnd_toStartOf="@+id/location_temp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/location_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="50dp"
+        android:text="0°C"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        tools:visibility="visible"
+        app:layout_constraintStart_toEndOf="@id/location_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/location_input_text_layout"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/location_input_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:textColorHint="@color/light_gray"
+        app:layout_constraintTop_toBottomOf="@id/location_name"
+        app:layout_constraintBottom_toTopOf="@id/submit_location">
+
+    <EditText
+        android:id="@+id/location_input_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input location"
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/submit_location"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/submit_city_btn_ripple"
+        android:gravity="center"
+        android:text="SUBMIT"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location_input_text_layout"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
